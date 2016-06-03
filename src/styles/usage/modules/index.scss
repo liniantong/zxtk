@@ -1,0 +1,175 @@
+// import swiper
+@import "../core/swiper-3.3.1.min.css";
+
+.m-index {
+  width: 100%;
+  height: 100%;
+  @include flexbox();
+  @include flex-direction(column);
+  > div {
+    @include flex();
+    width: 100%;
+    position: relative;
+    header {
+      background: $base-color;
+      height: .44rem;
+      ul {
+        width: 100%;
+        height: 100%;
+        @include flexbox();
+        li:not(:nth-child(2)) {
+          width: .44rem;
+          line-height: .44rem;
+          text-align: center;
+          font-size: .2rem;
+          color: rgba(255,255,255, 0.8);
+        }
+        li:nth-child(2) {
+          @include flex();
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(center);
+          span {
+            display: inline-block;
+            width: .59rem;
+            height: .25rem;
+            line-height: .25rem;
+            text-align: center;
+            font-size: .12rem;
+            color: rgba(255,255,255, 0.5);
+            background: rgba(100, 217, 133, 0.5);
+            &:last-child {
+              border-top-right-radius: .1rem;
+              border-bottom-right-radius: .1rem;
+            }
+            &:first-child {
+              border-top-left-radius: .1rem;
+              border-bottom-left-radius: .1rem;
+            }
+            &.active {
+              color: #FFF;
+              background: #64d985;
+            }
+          }
+        }
+      }
+    }
+    nav {
+      height: .35rem;
+      background: #fff;
+      ul {
+        width: 100%;
+        height: 100%;
+        @include flexbox();
+        li {
+          @include flex();
+          height: 100%;
+          text-align: center;
+          line-height: .35rem;
+          @include border(0 0 1px 0, #d9d9d9);
+          @include box-sizing(border-box);
+          &.active {
+            color: $base-color;
+            border-bottom: solid 0.02rem $base-color;
+          }
+        }
+      }
+    }
+    section {
+      @include flex();
+      width: 100%;
+      overflow: hidden;
+      > div {
+        // padding-bottom: .44rem;
+        ul {
+          width: 100%;
+          @include flexbox();
+          li {
+            @include box-sizing(border-box);
+            margin-top: .05rem;
+            &:nth-child(2) {
+              width: .05rem;
+            }
+            &:not(:nth-child(2)) {
+              @include flex();
+              @include border(1px, #e5e5e5);
+            }
+            i, b {
+              display: block;
+              font-weight: normal;
+            }
+            i {
+              @include border(0 0 1px 0, #e5e5e5);
+              img {
+                width: 100%;
+              }
+            }
+            b {
+              font-size: 14px;
+              padding: .05rem;
+              background: #fff;
+            }
+
+            &.hidden {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+  > footer {
+    position: relative;
+    height: .44rem;
+    background: #fff;
+    width: 100%;
+    z-index: 9999;
+    ul {
+      width: 100%;
+      height: 100%;
+      @include box-sizing(border-box);
+      @include border(1px 0 0 0, #d9d9d9);
+      @include flexbox();
+      li {
+        position: relative;
+        @include flex();
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+        &.active b,
+        &.active i {
+          color: $base-color !important;
+        }
+        b, i {
+          display: block;
+          color: #d6d6d6;
+          font-weight: normal;
+        }
+        i {
+          font-size: .18rem;
+          line-height: .18rem;
+        }
+        b {
+          font-size: .12rem;
+        }
+
+        &:nth-child(3) i {
+          position: absolute !important;
+          left: 50%;
+          bottom: 0;
+          width: .54rem;
+          height: .54rem;
+          @include box-sizing(border-box);
+          @include border(1px, #d6d6d6, solid, 50%);
+          @include transform(translate(-50%, 0));
+          background: #fff;
+          z-index: 9999;
+          font-size: .4rem;
+          line-height: .54rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

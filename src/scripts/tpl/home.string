@@ -1,0 +1,40 @@
+<header>
+  <ul>
+    <li class="yo-ico">&#xe745;</li>
+    <li>
+      <span class="active">热点</span>
+      <span>关注</span>
+    </li>
+    <li class="yo-ico">&#xe684;</li>
+  </ul>
+</header>
+<nav id="index-nav">
+  <ul>
+    <li class="active" action-type="switch.swiper">足球现场</li>
+    <li action-type="switch.swiper">足球生活</li>
+    <li action-type="switch.swiper">足球美女</li>
+  </ul>
+</nav>
+<section id="index-scroll" spa-widget="scroll" data-scroll-id="indexScroll">
+  <div class="swiper-container" id="index-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div>
+          <ul ms-repeat-value="livelist">
+            <li>
+              <i><img ms-src="value[0].imgSrc" /></i>
+              <b ms-text="value[0].title"></b>
+            </li>
+            <li></li>
+            <li ms-class-hidden="!value[1]">
+              <i><img ms-src="value[1].imgSrc" /></i>
+              <b ms-text="value[1].title"></b>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="swiper-slide">足球生活</div>
+      <div class="swiper-slide">足球美女</div>
+    </div>
+  </div>
+</section>
